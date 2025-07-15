@@ -25,7 +25,7 @@ Known Issues:
 -->
 	
    <head> 
-      <title>This or That</title>  
+      <title>Do You Want to Live in the City or the Country?</title>  
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <meta name="mobile-web-app-capable" content="yes">
       <link rel="stylesheet" href="w3.css">
@@ -34,24 +34,24 @@ Known Issues:
 
 
 <script>
-        var allergy_count = 0;//variable to keep track of the number of times the user answers a question that leads to the allergy diagnosis 
-        var cold_count = 0;//variable to keep track of the number of times the user answers a question that leads to the cold diagnosis 
+        var city_count = 0;//variable to keep track of the number of times the user answers a question that leads to the city preference 
+        var country_count = 0;//variable to keep track of the number of times the user answers a question that leads to the country preference 
 
-        function allergyAdd(){ //this function is used to add an additional count to allergy_count each time it is called
-            allergy_count = allergy_count + 1; 
-		//alert("allergy_count is " + allergy_count); I wanted to further clarify that the alert is displaying the count for allergy_count, but this code is now irrelevant
+        function cityAdd(){ //this function is used to add an additional count to city_count each time it is called
+            city_count = city_count + 1; 
+		//alert("city_count is " + city_count); I wanted to further clarify that the alert is displaying the count for city_count, but this code is now irrelevant
         }
 
-        function coldAdd(){
-            cold_count = cold_count + 1;//this function is used to add an additional count to cold_count each time it is called
-		//alert("cold_count is " + cold_count); I wanted to add further clarify that the alert is displaying the count for cold_count, but this code is now irrelevant
+        function countryAdd(){
+            country_count = country_count + 1;//this function is used to add an additional count to country_count each time it is called
+		//alert("country_count is " + country_count); I wanted to add further clarify that the alert is displaying the count for country_count, but this code is now irrelevant
         }
 
 	function outputResults(){
-		var percent_allergy = allergy_count/(allergy_count + cold_count)*100; // This line converts the allergy_count into a percentage
-		var percent_cold = cold_count/(allergy_count + cold_count)*100; // This line converts the cold_count into a percentage
+		var percent_city = city_count/(city_count + country_count)*100; // This line converts the city_count into a percentage
+		var percent_country = country_count/(city_count + country_count)*100; // This line converts the country_count into a percentage
 		var resultsText = document.getElementById("resultsLocation"); // creates a java script link between the variable called "resultsText" and the page element with id of resultsLocation
-		resultsLocation.innerHTML = "Probability it is allergies = " + percent_allergy + "% <br> Probability it is a cold = " + percent_cold + "%" //This line replaces the text from the Results Page with the diagnosis
+		resultsLocation.innerHTML = "Your Preference is the City = " + percent_city + "% <br> Your Preference is the Country = " + percent_country + "%" //This line replaces the text from the Results Page with the diagnosis
 	}
 
   </script>
